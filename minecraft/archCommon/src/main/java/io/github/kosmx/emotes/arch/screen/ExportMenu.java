@@ -125,8 +125,12 @@ public class ExportMenu extends EmoteConfigScreen {
     }
 
     @Override
-    public void render(@NotNull GuiGraphics matrices, int mouseX, int mouseY, float tickDelta) {
+    public void renderBackground(@NotNull GuiGraphics matrices, int mouseX, int mouseY, float tickDelta) {
         renderDirtBackground(matrices);
-        super.render(matrices, mouseX, mouseY, tickDelta);
+    }
+
+    @Override
+    public void render(GuiGraphics guiGraphics, int i, int j, float f) {
+        super.render(guiGraphics, i, j, f);
     }
 }

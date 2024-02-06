@@ -206,8 +206,13 @@ public class EmoteMenu extends EmoteConfigScreen {
     }
 
     @Override
+    public void renderBackground(GuiGraphics guiGraphics, int i, int j, float f) {
+        this.renderDirtBackground(guiGraphics);
+    }
+
+    @Override
     public void render(@NotNull GuiGraphics matrices, int mouseX, int mouseY, float delta){
-        this.renderDirtBackground(matrices);
+        super.render(matrices, mouseX, mouseY, delta);
         if(this.emoteList.getSelectedEntry() == null){
             this.setKeyButton.active = false;
             //this.resetKey.setActive(false);
@@ -239,7 +244,6 @@ public class EmoteMenu extends EmoteConfigScreen {
         this.searchBox.render(matrices, mouseX, mouseY, delta);
         this.fastMenu.render(matrices, mouseX, mouseY, delta);
         updateKeyText();
-        super.render(matrices, mouseX, mouseY, delta);
     }
 
     private boolean setKey(InputConstants.Key key){
